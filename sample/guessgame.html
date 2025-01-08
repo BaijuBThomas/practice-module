@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guess game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            text-align: center;
+            font-family: Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+
+        }
+        .result {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            width: 15rem;
+        }
+        .submit {
+            padding: 2px 6px; 
+        }
+         
+          
+        .start-game {
+            padding: 10px 16px;
+            background-color: #0ff;
+            border: 1px solid grey;
+            border-radius: 4px;
+            
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <p>Enter a guess between 0 to 100</p>
+    <form class="form-data">
+        <input class="result" type="number" min="0" max="100" placeholder="Enter the number">
+        <div>
+            <button class="submit" >submit</button>
+            <button type="button" class="start-game" disabled>Start game</button>
+        </div> 
+    </form>
+    <p class="gotit"></p>
+    <p class="guess"><span></span></p>
+
+    <script>
+        const resultData = document.querySelector('.result');
+        const formResult = document.querySelector('.form-data');
+        const textRef = document.querySelector('.gotit');
+        const allElementRef = document.querySelector('.guess');
+        const startGame = document.querySelector('.start-game');
+        const submitRef = document.querySelector('.submit');
+
+        const allElementArray = [];
+        let randonNumber = Math.round(Math.random()*100);
+
+        formResult.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const resultValue = parseInt(resultData.value);
+            if(resultValue < randonNumber){
+                textRef.innerText="Too Low!";
+            }
+            else if(resultValue > randonNumber){
+                textRef.innerText="Too high!";
+            }
+            else {
+                textRef.innerText="you got it right congrats";
+                startGame.disabled= true;
+                submitRef.disabled = false;
+
+            }
+            allElementArray.push(resultValue);
+            allElementRef.innerText = 'Your guesses:'+allElementArray.join(',');
+            formResult.reset();
+        });
+
+        startGame.addEventListener('click',(e) => {
+            textRef.innerText = "";
+            allElementRef.innerText = "";
+            startGame.disabled= false;
+            submitRef.disabled = true;
+            randonNumber = Math.round(Math.random()*100);
+
+        });
+    </script>
+</body>
+</html>

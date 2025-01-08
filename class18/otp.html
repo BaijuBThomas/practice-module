@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP DEMO</title>
+    <style>
+        .otp-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .otp {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px 0;
+        }
+        .otp input {
+            width: 30px;
+            height: 40px;
+            border: 1px solid black;
+            border-radius: 3px;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="otp-wrapper">
+        <h1><u> Enter OTP</u></h1>
+        <div class="otp">
+            <input maxlength="1" type="number"/>
+            <input maxlength="1" type="number"/>
+            <input maxlength="1" type="number"/>
+            <input maxlength="1" type="number"/>
+            <input maxlength="1" type="number"/>
+            <input maxlength="1" type="number"/>
+        </div>
+    </div>
+</body>
+<script>
+
+    const inputRef = document.querySelectorAll('.otp input');
+    inputRef.forEach((inputs) => {
+        inputs.addEventListener('keyup', function(e) {
+            console.log(e.target.value, Number(e.target.value));
+            if(e.target.value && !isNaN(Number(e.target.value))){
+                e.target.nextElementSibling?.focus();
+            }
+        });
+    });
+
+    inputRef.forEach((inputs) => {
+        inputs.addEventListener('keydown', function(e) {
+           
+            if(e.key =="Delete" || e.key == "Backspace"){
+                console.log(e.target.value);
+                if(!e.target.value) {
+                    e.target.previousElementSibling?.focus();
+                }
+            }
+        });
+    });
+
+</script>
+</html>
