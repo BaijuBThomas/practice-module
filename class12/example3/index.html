@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>
+            <input
+            class="username"
+            type="text"
+            name="username"
+            placeholder="enter name"
+            />
+            <span class="preview"></span>
+        </div>
+    </div>
+</body>
+<script>
+    const usernameRef = document.getElementsByClassName('username')[0];
+    usernameRef.addEventListener('keyup', function(event){
+        console.log("keyup ->",event.target.value);
+    });
+    usernameRef.addEventListener('keydown', function(event){
+        console.log("keydown ->",event.target.value);
+    });
+</script>
+</html>

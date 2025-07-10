@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter Sample</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            text-align: center;
+        }
+        button {
+            padding: 10px 16px;
+            background-color: #0ff;
+            border: 1px solid grey;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .change {
+            width: 5rem;
+            height: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Counter</h1>
+    <h1 class="result">0</h1>
+    <div class="button">
+        <button class="minus">-</button>
+        <button class="plus">+</button>
+        <div class="ans">
+            <label>Increment/Decrement by:</label>
+            <input type="number" value="1" class="change">
+        </div>
+        <button class="reset">Reset</button>
+    </div>
+   
+</body>
+<script>
+
+    const minusRef = document.querySelector('.minus');
+    const plusRef = document.querySelector('.plus');
+    const resultRef = document.querySelector('.result');
+    const changeRef = document.querySelector('.change');
+    const resetRef = document.querySelector('.reset');
+
+    minusRef.addEventListener('click', function() {
+        const resultValue =parseInt(resultRef.innerText);
+        const changeValue = parseInt(changeRef.value) || 1;
+        resultRef.innerText = resultValue - changeValue;
+    });
+    plusRef.addEventListener('click', function() {
+        const resultValue =parseInt(resultRef.innerText);
+        const changeValue = parseInt(changeRef.value) || 1;
+        resultRef.innerText = resultValue + changeValue;
+    });
+    
+    resetRef.addEventListener('click', () => {
+        resultRef.innerText=0;
+    });
+
+
+</script>
+</html>

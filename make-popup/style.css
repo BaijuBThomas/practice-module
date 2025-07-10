@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    background-color: #DECDAC;
+    font-family: cursive;
+}
+
+.popup {
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    border-radius: 16px;
+    padding: 8px;
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    box-shadow: 0 5px 4px 2px rgba(0, 0, 0, 0.3);
+    /* display: none; */
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+
+}
+
+.closed-icon {
+    font-size: 48px;
+    font-weight: 700;
+    position: absolute;
+    right: 16px;
+    cursor: pointer;
+    font-family: serif;
+
+}
+.popup.open {
+    /* display: block; */
+    transform: scale(1);
+}

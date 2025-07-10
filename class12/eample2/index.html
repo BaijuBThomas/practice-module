@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+        .movie {
+        text-align: center;
+        display: inline-block;
+        margin: 10px;
+        vertical-align: top; /* Align them at the top */
+        width: 150px; /* Set a width if needed */
+        height: 8rem;
+        background-color: rgb(240, 28, 28);
+        color: white;
+        
+        }   
+
+    </style>
+</head>
+<body>
+    <h1>Book My Show</h1>
+    <div style="text-align: center;">
+    <select>
+        <option value="none">None</option>
+        <option value="action">Action</option>
+        <option value="romance">Romance</option>
+        <option value="comedy">Comedy</option>
+    </select>
+</div>
+    <div class="movie">
+        <h3 class="heading">Action Movie-1</h3>
+        <p class="price" data-category="action">Rs.100</p>
+    </div>
+    <div class="movie">
+        <h3 class="heading">Action Movie-2</h3>
+        <p class="price" data-category="action">Rs.150</p>
+    </div>
+    <div class="movie">
+        <h3 class="heading">Action Movie-3</h3>
+        <p class="price" data-category="action">Rs.200</p>
+    </div>
+    <div class="movie">
+        <h3 class="heading">Action Movie-1</h3>
+        <p class="price" data-category="romance">Rs.500</p>
+    </div>
+    <div class="movie">
+        <h3 class="heading">Action Movie-2</h3>
+        <p class="price" data-category="romance">Rs.700</p>
+    </div>
+    <div class="movie">
+        <h3 class="heading">Action Movie-3</h3>
+        <p class="price" data-category="romance">Rs.600</p>
+    </div>
+    <div class="movie">
+        <h3 class="heading">Action Movie-1</h3>
+        <p class="price" data-category="comedy">Rs.300</p>
+    </div>
+    <div class="movie">
+        <h3 class="heading">Action Movie-2</h3>
+        <p class="price" data-category="comedy">Rs.400</p>
+    </div>
+    <div class="movie">
+        <h3 class="heading">Action Movie-3</h3>
+        <p class="price" data-category="comedy">Rs.500</p>
+    </div>
+    <div class="movie">
+        <h3 class="heading">Action Movie-10</h3>
+        <p class="price" data-category="none">Rs.500</p>
+    </div>
+    
+</body>
+<script>
+    const  selectRef = document.querySelector('select');
+
+    selectRef.addEventListener('change',function(event){
+        console.log(event.target.value);
+        filterCards(event.target.value);
+    });
+
+    function filterCards(filterName){
+        const priceRef = document.querySelectorAll('p.price');
+    console.log(priceRef);
+
+    priceRef.forEach((pricesRef) => {
+       const cat = pricesRef.getAttribute('data-category');
+       pricesRef.parentElement.style.display ='block';
+       if(filterName !== cat){
+        console.log(pricesRef);
+        pricesRef.parentElement.style.display ='none';
+       }
+    });
+    }
+
+</script>
+</html>

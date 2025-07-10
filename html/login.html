@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic login form</title>
+    <style>
+       .use{
+         color: red;
+       }
+       .but{
+        color: rgb(102, 0, 255);
+       }
+       #u{
+        color: blue;
+       }
+       
+  
+       
+    </style>
+</head>
+<body>
+    <form action="/signin" method="post" >
+        <div>
+            <label class="use"for="username">UserName</label>
+            <input  placeholder="Enter username" id="username" name="user"/>
+        </div>
+        
+        <div> 
+            <label id="u" for="password">Password</label>
+            <input type="password" placeholder="password" id="password" name="pass"/>
+        </div>
+        <div>
+            <input type="checkbox" id="remember me" name="remember"/>
+            <label for="remember me">Remember me </label>
+        </div>
+        <div>
+            <button class="but">Login</button>
+        </div>
+    </form>
+</body>
+</html>
+
+<!-- http://127.0.0.1:5500/signin?user=baiju&pass=1234&remember=on -->
