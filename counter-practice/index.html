@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            text-align: center;
+        }
+        .input{
+            height: 40px;
+            width: 50px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: large;
+        }
+
+    </style>
+</head>
+<body>
+   <div class="main">
+    <h1>counter</h1>
+     <input class="input" type="number">
+   <div>
+     <button class="plus" >+</button>
+    <button class="minus" >-</button>
+    <button class="reset" >reset</button>
+   </div>
+   </div>
+
+   <script>
+    const input = document.querySelector('.input');
+    const plus = document.querySelector('.plus');
+    const minus = document.querySelector('.minus');
+    const reset = document.querySelector('.reset');
+
+    let count = 0;
+
+    function updateDisplay(){
+       input.value = count; 
+    }
+    plus.addEventListener('click',()=>{
+       count++;
+       updateDisplay()
+    });
+    minus.addEventListener('click',()=>{
+       count--;
+       updateDisplay()
+    });
+    reset.addEventListener('click',()=>{
+       count=0;
+       updateDisplay()
+    });
+   
+   
+        
+        
+        
+
+   </script>
+</body>
+</html>
