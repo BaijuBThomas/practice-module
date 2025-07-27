@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 13 problem</title>
+    <style>
+        div {
+            border: 1px solid;
+            
+        }
+        .red {
+            padding: 2rem;
+            height: 20rem;
+            width: 20rem;
+            background-color: red;
+        }
+        .yellow {
+            height: 10rem;
+            width: 10rem;
+            margin: auto;
+            background-color: yellow;
+            margin-top: 5rem;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="red">
+        <div class="yellow"></div>
+    </div>
+   
+
+<script>
+    //click the yellow or red container 
+    const redRef = document.querySelector('.red');
+
+    redRef.addEventListener('click',(e) =>{
+        if(e.target.classList.contains('yellow')){
+            console.log('yellow is clicked');
+            window.alert('yellow is clicked');
+        }
+        else{
+            window.alert('red is clicked');
+            console.log('red is clicked');
+        }
+    });
+    
+
+</script>
+</body>
+</html>

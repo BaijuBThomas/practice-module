@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="counter-wrapper">
+        <h1>Counter</h1>
+        <div class="result"><button>0</button></div>
+        <div class="delta">
+            <span>Increment/Decrement by</span>
+            <input type="number" placeholder="delta" value="1"/>
+        </div>
+        <div class="action">
+            <button>+</button>
+            <button>-</button>
+        </div>
+        <div class="reset">
+            <button>Reset</button>
+        </div>
+    </div>
+</body>
+<script>
+    //get all the reference 
+    const resultRef = document.querySelector('.result button');
+    const inputRef = document.querySelector('.delta input');
+    const plusRef = document.querySelector('.action button:nth-child(1)');
+    const minusRef = document.querySelector('.action button:nth-child(2)');
+    const resetRef = document.querySelector('.reset button:nth-child(1)');
+
+    let count = 0;
+    let delta = 1;
+    //add listener to the reference 
+
+    function addListener() {
+        inputRef.addEventListener('change', (e) => {
+            delta = Number(e.target.value);
+        });
+        plusRef.addEventListener('click', (e) => {
+            
+            increment();
+        });
+        minusRef.addEventListener('click', (e) => {
+            
+            decrement();
+        });
+        resetRef.addEventListener('click', (e) => {
+            
+            reset();
+        });
+    }
+    function increment() {
+        count += delta;
+        updateResult();
+    }
+
+    function decrement() {
+        count -= delta;
+        updateResult();
+    }
+    function reset() {
+        count =0;
+        updateResult();
+        
+    }
+    function updateResult() {
+        resultRef.innerText = count;
+    }
+
+    addListener();
+</script>
+</html>
