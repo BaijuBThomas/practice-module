@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter-practice</title>
+</head>
+<body>
+    <h1 class="main">0</h1>
+    <button onclick="PlusFun()">+</button>
+    <button onclick="minusFun()">-</button>
+    <button onclick="resetFun()">Reset</button>
+</body>
+
+<script>
+let main = document.querySelector('.main');
+
+let count=0;
+
+function display(){
+    main.textContent = count;
+}
+
+function PlusFun(){
+    count++;
+    display();
+}
+function minusFun(){
+    count--;
+    display();
+}
+function resetFun(){
+    count=0;
+    display();
+}
+
+</script>
+</html>
