@@ -3,9 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>demo</title>
+    <title>counter practice</title>
+    <style>
+       div {
+        text-align: center;
+        margin-top: 20px;
+       }
+       .main{
+        font-size: 50px;
+       }
+       button{
+        color: #b71a1a;
+        background-color: bisque;
+        border-radius: 5px;
+        font-size: large;
+
+       }
+    </style>
 </head>
 <body>
-    <p>Hello</p>
+       <div >
+        <div class="main">0</div>
+        <button onclick="plus()">+</button>
+        <button onclick="minus ()">-</button>
+        <button onclick="reset()">Reset</button>
+         <input class="inputValue" type="number" value="0">
+       </div>
+
+        <script>
+            let main = document.querySelector('.main');
+            let inputValue = document.querySelector('.inputValue');
+            let count = 0;
+
+            function updateDisplay () {
+                main.textContent = count;
+            }
+            
+
+            function plus (){
+                let v = parseInt(inputValue.value);
+                count = count + v;
+                updateDisplay ()
+                
+            }
+            function minus (){
+              let v = parseInt(inputValue.value);
+                count = count - v;
+              updateDisplay ()
+    
+            }
+            function reset(){
+                count = 0;
+                updateDisplay ()
+            }
+     
+
+        </script>
 </body>
 </html>
