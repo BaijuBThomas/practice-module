@@ -1,6 +1,7 @@
 const image = document.querySelector('img')
 const button = document.querySelector('button')
 
+
 button.addEventListener('click', () => {
     const xhr = new XMLHttpRequest()
 
